@@ -5,7 +5,8 @@ const Base = {
 
 const Path = {
 	STYLE: {
-		source: Base.SOURCE + "styles/**/*.{sass,scss,pcss}",
+		source: Base.SOURCE + "styles/*.{sass,scss,pcss}",
+		all: Base.SOURCE + "styles/**/*.{sass,scss,pcss}",
 		build: Base.BUILD + "css/",
 	},
 	PAGE: {
@@ -19,7 +20,7 @@ const Path = {
 	},
 	ICON: {
 		source: Base.SOURCE + "icons/**/*.svg",
-		build: Base.BUILD,
+		build: Base.BUILD  + "img/",
 	},
 	IMAGE: {
 		source: Base.SOURCE + "images/**/*",
