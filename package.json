@@ -1,7 +1,7 @@
 {
-    "name": "gulp-boilerplate",
+    "name": "cat-energy",
     "version": "1.0.0",
-    "description": "Gulp starter template",
+    "description": "Demo project",
     "main": "gulpfile.js",
     "type": "module",
     "private": true,
