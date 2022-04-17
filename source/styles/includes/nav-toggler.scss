@@ -1,0 +1,47 @@
+@use "../core";
+
+.nav-toggler {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+
+	transition-property: color, background-color;
+	transition-duration: 0.4s;
+	outline: none;
+	color: core.$dark;
+
+	&__line {
+		transition: transform 0.2s, opacity 0.3s;
+		transform-origin: center;
+	}
+
+	&[aria-expanded="true"] &__line {
+		&--top {
+			transform: rotate(46.64deg) translate(1%, 15%);
+		}
+
+		&--middle {
+			transform: translateX(-22%);
+			opacity: 0;
+		}
+
+		&--bottom {
+			transform: rotate(-46.64deg) translate(0%, -10%);
+		}
+	}
+
+	&:hover {
+		color: core.$accent;
+	}
+
+	&:active {
+		color: core.$light;
+		background-color: core.$accent;
+	}
+
+	&:focus-visible {
+		color: core.$light;
+		background-color: core.$accent;
+	}
+}

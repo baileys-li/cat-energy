@@ -19,7 +19,7 @@ export default async function serve() {
 	});
 
 	gulp.watch(Path.PAGE.all, gulp.series(pages, readyReload));
-	gulp.watch(Path.STYLE.source, gulp.series(styles, streamStyles));
+	gulp.watch(Path.STYLE.all, gulp.series(styles, streamStyles));
 	gulp.watch(Path.SCRIPT.source, gulp.series(scripts, readyReload));
 	gulp.watch(Path.ICON.source, gulp.series(icons, readyReload));
 	gulp.watch(Path.IMAGE.source, gulp.series(images, readyReload));

@@ -1,0 +1,79 @@
+@use "../core";
+
+.main-nav {
+	width: 100%;
+	border-top: 1px solid core.$light-secondary;
+
+	&--enabled {
+		border-top: none;
+		position: absolute;
+		top: 100%;
+		background-color: #fff;
+		transform: translateY(-100%);
+		transition: transform 0.4s;
+		z-index: -2;
+	}
+
+	&--opened {
+		transform: translateY(0);
+	}
+	&__list {
+		@include core.reset-list();
+	}
+
+	&__link {
+		height: 65px;
+		display: grid;
+		place-items: center;
+		text-decoration: none;
+		color: inherit;
+		position: relative;
+		transition: font-weight 0.2s, color 0.2s;
+		overflow-y: initial;
+		overflow-x: clip;
+		z-index: 0;
+		--back-position: 110%;
+
+		border-bottom: 1px solid core.$light-secondary;
+
+		outline: none;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 60%;
+			height: calc(100% + 1px);
+			background-color: core.$accent;
+			transition: transform 0.2s;
+			z-index: -1;
+			top: 0;
+		}
+
+		&::before {
+			left: 0;
+			transform: skew(-20deg) translateX(calc(0% - var(--back-position)));
+		}
+
+		&::after {
+			right: 0;
+			transform: skew(-20deg) translateX(var(--back-position));
+		}
+
+		&[href] {
+			&:hover {
+				--back-position: 80%;
+				font-weight: 700;
+			}
+
+			&:active {
+				--back-position: 8%;
+				color: core.$light;
+			}
+		}
+
+		&:focus-visible {
+			--back-position: 80%;
+			font-weight: 700;
+		}
+	}
+}

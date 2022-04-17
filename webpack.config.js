@@ -12,9 +12,9 @@ const webpackConfig = {
 		outputModule: true,
 	},
 	plugins: [
-		new CircularDependencyPlugin(),
-		new DuplicatePackageCheckerPlugin(),
-		new OptimizePlugin(),
+		// new CircularDependencyPlugin(),
+		// new DuplicatePackageCheckerPlugin(),
+		// new OptimizePlugin(),
 	],
 };
 

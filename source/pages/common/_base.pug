@@ -1,16 +1,18 @@
 -
-	let lang =  "en"
+	const LANG =  "ru"
+	const PROJECT_NAME = "Кэт Энерджи"
 	let pageTitle = "Default Title"
+	let currentPage = "/"
 
 block variables
 
 doctype html
-html(lang=lang).page
+html(lang=LANG).page
 	head
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		title=pageTitle
+		title=PROJECT_NAME
 		link(rel="stylesheet" href="css/style.css")
 		//---- Favicons ----
 		link(rel="icon" href="/favicon.ico")
@@ -23,7 +25,8 @@ html(lang=lang).page
 
 	body
 		include _mixins
+		include ../includes/header
 		block body
 
 		script(type="module" src="js/main.js")
-		script(type="module" src="js/main.legacy.js", defer, nomodule)
+		script(src="js/main.legacy.js", defer, nomodule)

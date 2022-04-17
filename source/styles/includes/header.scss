@@ -1,0 +1,57 @@
+@use "../core";
+
+.header {
+	background-color: core.$light;
+	font-family: core.$accent-font;
+	color: core.$dark;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 1.5;
+	text-transform: uppercase;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+
+	&::before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: #fff;
+		z-index: -1;
+		border-bottom: 1px solid core.$light-secondary;
+	}
+
+	&__logo[href] {
+		color: inherit;
+		transition: color 0.4s;
+
+		outline: none;
+
+		&:hover {
+			color: core.$accent;
+		}
+
+		&:focus-visible {
+			color: core.$accent;
+		}
+	}
+
+	&__toggler:not([hidden]) + &__nav {
+		border-top: none;
+		position: absolute;
+		top: 100%;
+		background-color: #fff;
+		transform: translateY(-100%);
+		transition: transform 0.4s;
+		z-index: -2;
+	}
+
+	&__toggler[aria-expanded="true"] + &__nav {
+		transform: translateY(0);
+	}
+}

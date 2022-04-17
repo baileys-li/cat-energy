@@ -1,0 +1,20 @@
+.logo {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	padding: 12px 20px 15px;
+	&__icon {
+		display: none;
+
+		&--small {
+			display: block;
+		}
+	}
+
+	&__type {
+		position: absolute;
+		max-width: none;
+		left: calc(50vw - 50px);
+		top: 24px;
+	}
+}
