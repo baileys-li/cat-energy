@@ -11,9 +11,9 @@ header.header
 	a.logo._logo(href=isMainPage && '/')
 		svg._mascot(role="img" aria-labelledby="mascot-title" width=34 height=39)
 			title#mascot-title Наш маскот
-			use._icon.-small(href="img/logotype.svg#mascot-small" )
+			use._icon.-small(href="img/logotype.svg#mascot-small")
 			use._icon.-medium(href="img/logotype.svg#mascot-medium" width=61 height=51)
-			us._icon.-full(href="img/logotype.svg#mascot-full" width=71 height=60 )
+			use._icon.-full(href="img/logotype.svg#mascot-full" width=71 height=60 )
 
 
 		svg(role="img" aria-labelledby="logotype-title" width=101 height=19 viewBox="0 0 101 19" fill="currentColor")._type
@@ -21,7 +21,7 @@ header.header
 			use(href="img/logotype.svg#logotype" )
 
 	button.nav-toggler.__toggler(type="button" aria-expanded="false" aria-controls="#main-nav" hidden)
-		svg(width=65 height=65 viewBox="0 0 65 65" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Открыть меню")
+		svg(width=65 height=65 viewBox="0 0 65 65" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Открыть навигацию")
 			each line, index in ['top', 'middle', 'bottom']
 				- const yCoord = 23.25 + 8 * index
 				line(class=`nav-toggler__line nav-toggler__line--${line}` x1=20 x2=44 y1=yCoord y2=yCoord)

@@ -1,20 +1,54 @@
+@use '../core';
+
 .logo {
 	display: inline-flex;
 	align-items: center;
+	align-content: center;
 	position: relative;
-	padding: 12px 20px 15px;
+
 	&__icon {
 		display: none;
+	}
 
-		&--small {
+	@media (width < core.$header-bp) {
+		padding: 12px 20px 15px;
+		&__icon--small {
+			display: block;
+		}
+		&__type {
+			position: absolute;
+			max-width: none;
+			left: calc(50vw - 50px);
+			top: 24px;
+		}
+	}
+
+	@media (width >= core.$header-bp) and (width <= 800px) {
+		gap: 12px;
+		&__mascot {
+			width: 61px;
+			height: 51px;
+		}
+
+		&__icon--medium {
 			display: block;
 		}
 	}
 
-	&__type {
-		position: absolute;
-		max-width: none;
-		left: calc(50vw - 50px);
-		top: 24px;
+	@media (width > 800px) {
+		gap: 14px;
+		&__mascot {
+			width: 72px;
+			height: 60px;
+		}
+
+		&__icon--full {
+			display: block;
+		}
+		&__type {
+			width: 118px;
+			height: 22px;
+		}
 	}
+
 }
