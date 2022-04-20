@@ -42,7 +42,7 @@
 		}
 	}
 
-	@media (width < core.$header-bp) {
+	@media (max-width: (core.$header-bp - 1px)) {
 		&__nav {
 			width: 100%;
 			border-top: 1px solid core.$light-secondary;
@@ -63,7 +63,7 @@
 		}
 	}
 
-	@media (width >= core.$header-bp) {
+	@media (min-width: core.$header-bp) {
 		padding: 25px 30px;
 		display: grid;
 		grid-template-columns: auto minmax(auto, #{core.$container-width - 202px});

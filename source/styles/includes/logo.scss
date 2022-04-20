@@ -10,7 +10,7 @@
 		display: none;
 	}
 
-	@media (width < core.$header-bp) {
+	@media (max-width: (core.$header-bp - 1px)) {
 		padding: 12px 20px 15px;
 		&__icon--small {
 			display: block;
@@ -23,7 +23,7 @@
 		}
 	}
 
-	@media (width >= core.$header-bp) and (width <= 800px) {
+	@media (min-width: core.$header-bp) and (max-width: 800px) {
 		gap: 12px;
 		&__mascot {
 			width: 61px;

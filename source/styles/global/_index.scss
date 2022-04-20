@@ -8,31 +8,6 @@
 	box-sizing: border-box;
 }
 
-/*
-	Allow percentage-based heights in the application
-*/
-html,
-body {
-	height: 100%;
-	background-color: darkcyan;
-	color: white;
-}
-
-/*
-	Typographic tweaks!
-	Add accessible line-height
-	Improve text rendering
-*/
-body {
-	font-family: core.$main-font;
-	margin: 0;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-
-	font-weight: 400;
-	font-size: 14px;
-}
-
 /* Improve media defaults */
 img,
 picture,

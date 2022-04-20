@@ -1,0 +1,15 @@
+@use "../core";
+
+.page {
+	height: 100%;
+	&__body {
+		min-height: 100%;
+		font-family: core.$main-font;
+		margin: 0;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+
+		font-weight: 400;
+		font-size: 14px;
+	}
+}

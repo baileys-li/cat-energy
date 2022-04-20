@@ -1,0 +1,97 @@
+@use "../core";
+
+.footer {
+	position: sticky;
+	top: 100vh;
+
+	background-color: core.$light-footer;
+	padding: 38px 20px 22px;
+	display: grid;
+	justify-items: center;
+	gap: 22px;
+
+	&__socials {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 24px;
+		padding: 20px 0;
+		margin: 10px 0 0;
+		justify-content: center;
+		width: 100%;
+
+		list-style: none;
+
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: core.$light-secondary;
+	}
+
+	&__social {
+		color: #666666;
+		display: block;
+		&:hover {
+			color: core.$accent;
+		}
+
+		&:focus-visible {
+			color: core.$accent;
+			outline-offset: 0.2em;
+			outline: 1px solid currentColor;
+		}
+
+		&:active {
+			color: rgba(core.$accent, 30%);
+		}
+	}
+
+	&__copyright {
+		justify-self: start;
+		color: inherit;
+
+		font-size: 16px;
+		line-height: 1.125;
+		color: #444444;
+		text-decoration: none;
+		min-height: 34px;
+		display: inline-grid;
+		align-items: center;
+
+		svg {
+			position: fixed;
+			bottom: 22px;
+			right: 20px;
+			transition: fill 0.2s;
+		}
+
+		&:hover svg {
+			fill: core.$accent;
+		}
+
+		&:active {
+			opacity: 0.3;
+		}
+	}
+
+	@media (min-width: 600px) {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 58px max(30px, calc(50vw - #{core.$container-width * 0.5}));
+		justify-content: space-between;
+		align-items: center;
+
+		&__socials {
+			border: none;
+			width: auto;
+			padding: 0 20px;
+			margin: 0;
+		}
+
+		&__copyright {
+			grid-auto-flow: column;
+			gap: 22px;
+			svg {
+				position: initial;
+			}
+		}
+	}
+}

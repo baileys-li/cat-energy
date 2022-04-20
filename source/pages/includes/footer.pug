@@ -1,0 +1,24 @@
+-
+	const SOCIALS = [
+		{href: "https://vk.com/htmlacademy", title: "ВКонтакте", icon: "vk"},
+		{href: "https://www.youtube.com/user/htmlacademyru", title: "Ютуб", icon: "youtube"},
+		{href: "https://t.me/htmlacademy", title: "Телеграм", icon: "telegram"}
+	]
+
+
+footer.footer
+	svg._logo(role="img" aria-labelledby="logotype-title" width=128 height=24 viewBox="0 0 101 19" fill="currentColor")
+		use(href="img/logotype.svg#logotype")
+
+	ul._socials(aria-label="Наши социальные сети")
+		each social in SOCIALS
+			li
+				a._social(href=social.href)
+					svg(role="img" width=28 height=22 aria-labelledby=`${social.icon}-title` fill="currentColor")
+						title(id=`${social.icon}-title`)=social.title
+						use(href=`img/sprite.svg#${social.icon}`)
+
+
+	a(href="https://htmlacademy.ru/intensive/adaptive")._copyright HTML Academy
+		svg(role="img" width=27 height=34 aria-hidden="true" fill="#666666")
+			use(href=`img/sprite.svg#htmlacademy`)

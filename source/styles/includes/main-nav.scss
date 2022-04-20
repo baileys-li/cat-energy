@@ -22,7 +22,7 @@
 		color: inherit;
 	}
 
-	@media (width < core.$header-bp) {
+	@media (max-width: (core.$header-bp - 1px)) {
 		&__link {
 			height: 65px;
 			text-decoration: none;
@@ -80,7 +80,7 @@
 		}
 	}
 
-	@media (width >= core.$header-bp) {
+	@media (min-width: core.$header-bp) {
 		&__list {
 			display: grid;
 			grid-auto-flow: column;
