@@ -22,7 +22,10 @@ export default async function serve() {
 	gulp.watch(Path.STYLE.all, gulp.series(styles, streamStyles));
 	gulp.watch(Path.SCRIPT.source, gulp.series(scripts, readyReload));
 	gulp.watch(Path.ICON.source, gulp.series(icons, readyReload));
-	gulp.watch(Path.IMAGE.source, gulp.series(images, readyReload));
+	gulp.watch(
+		[Path.IMAGE.backgrounds, Path.IMAGE.pictures],
+		gulp.series(images, readyReload)
+	);
 	gulp.watch(Path.ASSET.source, gulp.series(assets, readyReload));
 }
 

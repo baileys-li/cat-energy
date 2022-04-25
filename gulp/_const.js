@@ -20,10 +20,11 @@ const Path = {
 	},
 	ICON: {
 		source: Base.SOURCE + "icons/**/*.svg",
-		build: Base.BUILD  + "img/",
+		build: Base.BUILD + "img/",
 	},
 	IMAGE: {
-		source: Base.SOURCE + "images/**/*",
+		pictures: Base.SOURCE + "pictures/**/*.{jpg,png}",
+		backgrounds: Base.SOURCE + "images/**/*.{jpg,png}",
 		build: Base.BUILD + "img/",
 	},
 	ASSET: {

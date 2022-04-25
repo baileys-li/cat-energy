@@ -1,0 +1,31 @@
+@use "../core/" as core;
+
+.button {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	color: core.$light;
+	padding: 0.8em;
+	background-color: core.$accent;
+	text-decoration: none;
+	width: 100%;
+	justify-content: center;
+
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.3s;
+
+	&:hover {
+		background-color: darken(core.$accent, 10%);
+	}
+
+	&:focus-visible {
+		outline: 2px solid core.$accent;
+		outline-offset: 0.2em;
+	}
+
+	&:active {
+		box-shadow: inset 0 0.2em 0.2em 0.2em rgba(core.$dark, 10%) ;
+	}
+}
