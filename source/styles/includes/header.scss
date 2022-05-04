@@ -97,6 +97,16 @@
 
 			.main-nav__link {
 				text-decoration-color: currentColor;
+
+				&[href]:hover {
+					color: core.$light;
+					outline: 2px solid currentColor;
+				}
+
+				&[href]:focus-visible {
+					color: core.$light;
+				}
+
 			}
 		}
 	}
