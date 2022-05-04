@@ -55,18 +55,7 @@ $bp-tab: 620px;
 			width: 100%;
 			height: $background-mob-size;
 			inset: 0 0 auto;
-			$filename: "../img/intro-bg-mob";
-			background-image: -webkit-image-set(
-				url("#{$filename}.jpg") 1x,
-				url("#{$filename}@2x.jpg") 2x,
-				url("#{$filename}@3x.jpg") 3x
-			);
-
-			background-image: image-set(
-				url("#{$filename}.jpg") 1x,
-				url("#{$filename}@2x.jpg") 2x,
-				url("#{$filename}@3x.jpg") 3x
-			);
+			@include core.responsive-background("../img/intro-bg-mob");
 		}
 	}
 
@@ -132,19 +121,8 @@ $bp-tab: 620px;
 			width: 50%;
 			height: 100%;
 			inset: 0 0 auto auto;
-			$filename: "../img/intro-bg-mob";
-			background-image: -webkit-image-set(
-				url("#{$filename}.jpg") 1x,
-				url("#{$filename}@2x.jpg") 2x,
-				url("#{$filename}@3x.jpg") 3x
-			);
-
-			background-image: image-set(
-				url("#{$filename}.jpg") 1x,
-				url("#{$filename}@2x.jpg") 2x,
-				url("#{$filename}@3x.jpg") 3x
-			);
-			background-position: left center;
+			@include core.responsive-background("../img/intro-bg-desc");
+			background-position: right center;
 		}
 	}
 
