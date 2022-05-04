@@ -1,17 +1,12 @@
 @use "../core/" as core;
 @use "sass:math";
 
+$background-mob-size: 302px;
+$gradient: linear-gradient(to bottom, core.$accent $background-mob-size, core.$light $background-mob-size);
 
-$bg-📱-size: 302px;
-$gradient: linear-gradient(to bottom, core.$accent $bg-📱-size, core.$light $bg-📱-size);
+$bp-tab: 620px;
 
 .intro {
-	color: core.$light;
-	background-color: core.$accent;
-
-	background-image: $gradient;
-	background-size: 100%;
-
 	display: grid;
 	justify-content: center;
 	justify-items: center;
@@ -24,6 +19,7 @@ $gradient: linear-gradient(to bottom, core.$accent $bg-📱-size, core.$light $b
 
 	font-size: 14px;
 	line-height: 1.29;
+	background-repeat: no-repeat;
 
 	&__title {
 		font-weight: 400;
@@ -41,22 +37,7 @@ $gradient: linear-gradient(to bottom, core.$accent $bg-📱-size, core.$light $b
 
 	&::after {
 		position: absolute;
-		content: '';
-		width: 100%;
-		height: $bg-📱-size;
-		inset: 0 0 auto;
-		$filename: "../img/intro-bg-mob";
-		background-image: -webkit-image-set(
-			url("#{$filename}.jpg") 1x,
-			url("#{$filename}@2x.jpg") 2x,
-			url("#{$filename}@3x.jpg") 3x
-		);
-
-		background-image: image-set(
-			url("#{$filename}.jpg") 1x,
-			url("#{$filename}@2x.jpg") 2x,
-			url("#{$filename}@3x.jpg") 3x
-		);
+		content: "";
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -64,4 +45,110 @@ $gradient: linear-gradient(to bottom, core.$accent $bg-📱-size, core.$light $b
 		opacity: 0.2;
 	}
 
+	@media (max-width: ($bp-tab - 1px)) {
+		color: core.$light;
+		background-color: core.$accent;
+
+		background-image: $gradient;
+		background-size: 100%;
+		&::after {
+			width: 100%;
+			height: $background-mob-size;
+			inset: 0 0 auto;
+			$filename: "../img/intro-bg-mob";
+			background-image: -webkit-image-set(
+				url("#{$filename}.jpg") 1x,
+				url("#{$filename}@2x.jpg") 2x,
+				url("#{$filename}@3x.jpg") 3x
+			);
+
+			background-image: image-set(
+				url("#{$filename}.jpg") 1x,
+				url("#{$filename}@2x.jpg") 2x,
+				url("#{$filename}@3x.jpg") 3x
+			);
+		}
+	}
+
+	@media (min-width: $bp-tab) {
+		justify-items: start;
+		padding: 2em 1.5em 526px;
+		font-size: 20px;
+		text-align: left;
+
+		grid-auto-columns: calc(100% - 80px);
+
+		&__picture {
+			order: 1;
+			justify-self: end;
+		}
+
+		&__image {
+			width: auto;
+			right: 30px;
+			bottom: 0;
+			height: 608px;
+			position: absolute;
+			z-index: -1;
+		}
+
+		&__title {
+			font-size: 3em;
+			max-width: 16ch;
+		}
+
+		&__subtitle {
+			margin: 40px 0 48px;
+		}
+
+		&__cta {
+			width: auto;
+			padding: 14px 26px;
+		}
+	}
+
+	@media (min-width: core.$intro-breakpoint) {
+		$filename: "../img/intro-bg-desc";
+		background-image: linear-gradient(to right, #fff 50%, core.$accent 50%);
+
+		background-position: right bottom;
+		background-size: 100%, 50% auto;
+
+		padding-bottom: 165px;
+		align-items: end;
+		align-content: end;
+		min-height: 694px;
+
+		grid-auto-columns: calc(100% - 80px);
+
+		&__image {
+			width: 552px;
+			height: auto;
+			left: calc(50% - 180px);
+			z-index: 1;
+		}
+
+		&::after {
+			width: 50%;
+			height: 100%;
+			inset: 0 0 auto auto;
+			$filename: "../img/intro-bg-mob";
+			background-image: -webkit-image-set(
+				url("#{$filename}.jpg") 1x,
+				url("#{$filename}@2x.jpg") 2x,
+				url("#{$filename}@3x.jpg") 3x
+			);
+
+			background-image: image-set(
+				url("#{$filename}.jpg") 1x,
+				url("#{$filename}@2x.jpg") 2x,
+				url("#{$filename}@3x.jpg") 3x
+			);
+			background-position: left center;
+		}
+	}
+
+	@media (min-width: (core.$container-width + 60px)) {
+		grid-auto-columns: calc(#{core.$container-width} - 80px);
+	}
 }

@@ -5,10 +5,10 @@
 		"form.html": "Подбор программы",
 	};
 
-	const isMainPage = currentPage !== '/'
+	const isMainPage = currentPage === '/'
 
-header.header
-	a.logo._logo(href=isMainPage && '/')
+header.header(class=isMainPage && 'header--overlay')
+	a.logo._logo(href=!isMainPage && '/')
 		svg._mascot(role="img" aria-labelledby="mascot-title" width=34 height=39)
 			title#mascot-title Наш маскот
 			use._icon.-small(href="img/logotype.svg#mascot-small")
@@ -19,9 +19,9 @@ header.header
 		svg(role="img" aria-labelledby="logotype-title" width=101 height=19 viewBox="0 0 101 19" fill="currentColor")._type
 			title#logotype-title=PROJECT_NAME
 			use(href="img/logotype.svg#logotype" )
-
+	-const navLabel = "Открыть навигацию"
 	button.nav-toggler.__toggler(type="button" aria-expanded="false" aria-controls="#main-nav" hidden)
-		svg(width=65 height=65 viewBox="0 0 65 65" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Открыть навигацию")
+		svg(width=65 height=65 viewBox="0 0 65 65" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label=navLabel title=navLabel)
 			each line, index in ['top', 'middle', 'bottom']
 				- const yCoord = 23.25 + 8 * index
 				line(class=`nav-toggler__line nav-toggler__line--${line}` x1=20 x2=44 y1=yCoord y2=yCoord)
