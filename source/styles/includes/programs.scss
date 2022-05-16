@@ -5,7 +5,13 @@
 	justify-content: center;
 	justify-items: center;
 
-	@media (min-width: 1250px) {
-		grid-template-columns: 570px 570px;
+	@media (min-width: 500px) {
+		padding-top: 0;
+		padding-bottom: 45px;
+	}
+	@media (min-width: 1000px) {
+		padding-top: 82px;
+		padding-bottom: 70px;
+		grid-template-columns: 1fr 1fr;
 	}
 }

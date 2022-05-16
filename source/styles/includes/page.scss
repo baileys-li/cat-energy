@@ -1,16 +1,20 @@
-@use "../core";
+@use "../core/variables" as *;
 
 .page {
 	--side-offset: clamp(20px, 6.25vw, 30px);
 	height: 100%;
 	&__body {
 		min-height: 100%;
-		font-family: core.$main-font;
+		font-family: $main-font;
 		margin: 0;
 		line-height: 1.5;
 		-webkit-font-smoothing: antialiased;
 
 		font-weight: 400;
 		font-size: 14px;
+	}
+
+	@media (min-width: ($container-width + 30px * 2)) {
+		--side-offset: calc(50vw - #{$container-width * 0.5});
 	}
 }

@@ -5,7 +5,7 @@
 	top: 100vh;
 
 	background-color: core.$light-footer;
-	padding: 38px 20px 22px;
+	padding: 38px var(--side-offset) 22px;
 	display: grid;
 	justify-items: center;
 	gap: 22px;
@@ -75,7 +75,10 @@
 	@media (min-width: 600px) {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 58px max(30px, calc(50vw - #{core.$container-width * 0.5}));
+		padding: {
+			top: 58px;
+			bottom: 58px;
+		};
 		justify-content: space-between;
 		align-items: center;
 

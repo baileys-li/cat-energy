@@ -67,9 +67,9 @@
 	}
 
 	@media (min-width: core.$header-bp) {
-		padding: 52px 30px;
+		padding: 52px var(--side-offset);
 		display: grid;
-		grid-template-columns: auto minmax(auto, #{core.$container-width - 202px});
+		grid-template-columns: auto 1fr;
 		justify-content: center;
 		align-items: center;
 		font-weight: 400;

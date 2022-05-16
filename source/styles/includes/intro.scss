@@ -10,7 +10,7 @@ $bp-tab: 620px;
 	display: grid;
 	justify-content: center;
 	justify-items: center;
-	padding: 2em 20px 0;
+	padding: 2em var(--side-offset) 0;
 	font-family: core.$accent-font;
 	text-align: center;
 
@@ -61,11 +61,11 @@ $bp-tab: 620px;
 
 	@media (min-width: $bp-tab) {
 		justify-items: start;
-		padding: 2em 1.5em 526px;
+		justify-content: start;
+		padding: 2em calc(var(--side-offset) + 40px) 526px;
+
 		font-size: 20px;
 		text-align: left;
-
-		grid-auto-columns: calc(100% - 80px);
 
 		&__picture {
 			order: 1;
@@ -108,8 +108,6 @@ $bp-tab: 620px;
 		align-content: end;
 		min-height: 694px;
 
-		grid-auto-columns: calc(100% - 80px);
-
 		&__image {
 			width: 552px;
 			height: auto;
@@ -124,9 +122,5 @@ $bp-tab: 620px;
 			@include core.responsive-background("../img/intro-bg-desc");
 			background-position: right center;
 		}
-	}
-
-	@media (min-width: (core.$container-width + 60px)) {
-		grid-auto-columns: calc(#{core.$container-width} - 80px);
 	}
 }
