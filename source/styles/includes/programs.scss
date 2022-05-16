@@ -1,0 +1,11 @@
+.programs {
+	display: grid;
+	gap: var(--side-offset) 80px;
+	padding: var(--side-offset);
+	justify-content: center;
+	justify-items: center;
+
+	@media (min-width: 1250px) {
+		grid-template-columns: 570px 570px;
+	}
+}

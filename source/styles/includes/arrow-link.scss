@@ -1,0 +1,50 @@
+@use "../core/variables" as *;
+
+@use "../core/mixins/focus-hover" as *;
+
+.arrow-link {
+	text-transform: uppercase;
+	font-family: $accent-font;
+	color: #000;
+	text-decoration: none;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	outline: none;
+
+	&::before,
+	&::after {
+		content: "";
+		order: 1;
+		background-color: currentColor;
+		transition: transform 0.2s;
+	}
+
+	&::before {
+		height: 2px;
+		width: 18px;
+
+		margin-left: 15px;
+
+		transform-origin: left center;
+	}
+
+	&::after {
+		width: 10px;
+		height: 10px;
+		clip-path: polygon(0 0, 50% 50%, 0 100%);
+	}
+
+
+
+	@include focus-hover {
+		color: $accent;
+		&::before {
+			transform: scaleX(1.4);
+		}
+		&::after {
+			transform: translateX(72%);
+		}
+	}
+}
