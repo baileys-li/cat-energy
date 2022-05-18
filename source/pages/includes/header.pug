@@ -20,8 +20,8 @@ header.header(class=isMainPage && 'header--overlay')
 			title#logotype-title=PROJECT_NAME
 			use(href="img/logotype.svg#logotype" )
 	-const navLabel = "Открыть навигацию"
-	button.nav-toggler.__toggler(type="button" aria-expanded="false" aria-controls="#main-nav" hidden)
-		svg(width=65 height=65 viewBox="0 0 65 65" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label=navLabel title=navLabel)
+	button.nav-toggler.__toggler(type="button" aria-expanded="false" aria-controls="main-nav" hidden aria-label=navLabel title=navLabel)
+		svg(width=65 height=65 viewBox="0 0 65 65" fill="none" stroke="currentColor" stroke-width="1.5" role="img" )
 			each line, index in ['top', 'middle', 'bottom']
 				- const yCoord = 23.25 + 8 * index
 				line(class=`nav-toggler__line nav-toggler__line--${line}` x1=20 x2=44 y1=yCoord y2=yCoord)
