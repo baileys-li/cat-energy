@@ -1,0 +1,114 @@
+@use "../core/variables" as *;
+
+.feature {
+	--back-info: #eaeaea;
+	background-color: var(--back-info);
+	padding: 1.79rem var(--side-offset) 2.86rem;
+	color: #444;
+
+	&__title {
+		font-family: $accent-font;
+		font-weight: 400;
+		font-size: 2.57rem;
+		line-height: 1.11;
+		margin: 0 0 1.11em;
+		color: $dark;
+	}
+
+	&__lead {
+		margin: 0 0 1.43em;
+	}
+
+	&__info {
+		display: grid;
+		gap: 2.43rem 11.43%;
+		margin: 0;
+	}
+
+	&__summary {
+		grid-column: 1 / -1;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 1.43;
+		font-family: $accent-font;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		color: $dark;
+
+		dt::after {
+			content: ":";
+		}
+
+		dd {
+			margin-left: 0.2em;
+		}
+	}
+
+	@media (min-width: 300px) {
+		&__info {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media (min-width: 600px) {
+		border-top: 1px solid #e6e6e6;
+		padding-top: 2.625rem;
+		padding-bottom: 3.5rem;
+		--back-info: #{$light};
+
+		&__title {
+			font-size: 3.75rem;
+			margin-bottom: 1.05em;
+			line-height: 1;
+		}
+
+		&__lead {
+			margin-bottom: 3.375rem;
+		}
+
+		&__info {
+			grid-template-columns: 162px 162px 1fr;
+			gap: 38px;
+			align-items: center;
+		}
+
+		&__summary {
+			grid-column: auto;
+			display: grid;
+			gap: 9px;
+			font-size: 20px;
+			line-height: 1;
+			text-align: right;
+			justify-content: end;
+		}
+
+	}
+	@media (min-width: 1000px) {
+		display: grid;
+
+		grid-template-columns: 436px 592px;
+		justify-content: space-between;
+
+		&__info {
+			grid-template-columns: 1fr 1fr;
+			gap: 42px;
+		}
+
+		&__summary {
+			display: flex;
+			grid-column: 1 / -1;
+			text-align: left;
+			justify-content: start;
+
+			dd {
+				margin-left: 62px;
+			}
+		}
+
+		&__image {
+			grid-row: 1 / 4;
+			grid-column: 2 / 3;
+		}
+	}
+}

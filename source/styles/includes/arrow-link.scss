@@ -24,19 +24,15 @@
 	&::before {
 		height: 2px;
 		width: 18px;
-
 		margin-left: 15px;
-
 		transform-origin: left center;
 	}
 
 	&::after {
-		width: 10px;
+		width: 7px;
 		height: 10px;
-		clip-path: polygon(0 0, 50% 50%, 0 100%);
+		clip-path: polygon(0 0, 100% 50%, 0 100%);
 	}
-
-
 
 	@include focus-hover {
 		color: $accent;

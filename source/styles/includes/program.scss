@@ -4,8 +4,6 @@
 	background-color: #f2f2f2;
 	display: grid;
 	padding: 24px 20px 0;
-	font-size: 14px;
-	line-height: 1.3;
 	color: #444444;
 
 	grid-template-columns: 50px 1fr;
@@ -20,7 +18,7 @@
 		font-family: $accent-font;
 
 		font-weight: 400;
-		font-size: 24px;
+		font-size: 1.71rem;
 		line-height: 1.54;
 		color: #000;
 		margin: 0;
@@ -49,9 +47,6 @@
 		grid-template-columns: 1fr 200px;
 		gap: 24px 50px;
 		padding: 77px 52px 52px;
-
-		font-size: 16px;
-		line-height: 1.5;
 
 		&__headline {
 			font-size: 36px;

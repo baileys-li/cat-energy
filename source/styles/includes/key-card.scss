@@ -1,0 +1,37 @@
+@use "../core/variables" as *;
+@use 'sass:math';
+
+.key-card {
+	border: 1px solid #cdcdcd;
+	border-radius: 3px;
+	padding: 1rem 10px 1.143em;
+	text-align: center;
+	width: 100%;
+	position: relative;
+
+	&__value {
+		font-family: $accent-font;
+		font-size: 1.71rem;
+		line-height: 1;
+		color: $dark;
+		margin: auto;
+		text-transform: uppercase;
+	}
+
+	&__key {
+		margin: auto;
+		position: absolute;
+		text-transform: lowercase;
+		inset: calc(100% - 0.8em) 0 auto;
+		font-size: 0.86rem;
+		background-color: var(--back-info);
+		width: fit-content;
+		padding: 0 14px;
+	}
+
+	@media (min-width: 300px) and (max-width: 380px) {
+		&__key {
+			width: 12ch;
+		}
+	}
+}
