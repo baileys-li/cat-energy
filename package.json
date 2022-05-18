@@ -6,8 +6,8 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"dev": "npx gulp",
-		"build": "npx gulp build",
+		"start": "gulp",
+		"build": "gulp build",
 		"test": "eslint source/**/*.js & npx gulp test"
 	},
 	"author": "Arthur Baileys Li",

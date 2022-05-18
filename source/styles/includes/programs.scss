@@ -1,6 +1,9 @@
+@use '../core/variables' as *;
+@use 'sass:math';
+
 .programs {
 	display: grid;
-	gap: var(--side-offset) 80px;
+	gap: var(--side-offset) math.div(80px, $container-width) * 100%;
 	padding: var(--side-offset);
 	justify-content: center;
 	justify-items: center;
